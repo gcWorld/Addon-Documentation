@@ -1,66 +1,70 @@
 {{ define "main" }}
-  <div class="post">
-    <h1 class="post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>
+    <main class="post">
 
-    {{ if .Params.tags }}
-      <span class="post-tags">
-        {{ range .Params.tags }}
-          #<a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}">{{ . }}</a>&nbsp;
+        <div class="post-info">
+            {{ if .IsTranslated }}
+                {{ i18n "postAvailable" }}
+                {{ range .Translations }}
+                    <a href="{{ .Permalink }}"><span class="flag flag-icon flag-icon-{{ index $.Site.Data.langFlags (.Lang) }} flag-icon-squared"></span></a>
+                {{ end}}
+            {{ end }}
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
+
+            {{- if .Params.toc }}
+                <hr />
+                <aside id="toc">
+                <div class="toc-title">{{ i18n "tableOfContents" }}</div>
+                    {{ .TableOfContents }}
+                </aside>
+                <hr />
+            {{- end }}
+
+            {{ with .Params.Cover }}
+                <img src="/img/{{ . }}" class="post-cover" />
+            {{ end }}
+
+            <div class="post-content">
+                {{ .Content }}
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  				{{- with .Params.tags }}
+  				<p>
+  					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+  					{{- range . -}}
+  					     <span class="tag"><a href="{{ "tags/" | absURL }}{{ . | urlize }}">{{.}}</a></span>
+  					{{- end }}
+  				</p>
+  				{{- end }}
+
+                {{- if .GitInfo }}
+  				    <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-git-commit"><circle cx="12" cy="12" r="4"></circle><line x1="1.05" y1="12" x2="7" y2="12"></line><line x1="17.01" y1="12" x2="22.96" y2="12"></line></svg><a href="{{ .Site.Params.gitUrl -}}{{ .GitInfo.Hash }}" target="_blank" rel="noopener">{{ .GitInfo.AbbreviatedHash }}</a> @ {{ if .Site.Params.dateformNum }}{{ dateFormat .Site.Params.dateformNum .GitInfo.AuthorDate.Local }}{{ else }}{{ dateFormat "2006-01-02" .GitInfo.AuthorDate.Local }}{{ end }}</p>
+                {{- end }}
+                {{ if not .Page.Lastmod.IsZero }}
+                <div class="date">
+                    <i class='fa fa-calendar'></i> {{T "last-update-on"}} {{ if .Site.Params.dateformNum }}{{ dateFormat .Site.Params.dateformNum .Page.Lastmod }}{{ else }}{{ dateFormat "2006-01-02" .Page.Lastmod }}{{ end }}{{- if .GitInfo }} - ({{ .GitInfo.AbbreviatedHash }}){{- end}}
+                </div>
+                {{end}}
+
+                {{ if .Site.Params.editURL }}
+                <div class="github-link">
+                <a href="{{ .Site.Params.editURL }}{{ replace .File.Dir "\\" "/" }}{{ .File.LogicalName }}" target="blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    {{T "Edit-this-page"}}</a>
+                </div>
+                {{end}}  
+  			</div>
+
+        {{ if .Params.comments }}
+          <div id="comments" class="thin">
+      		    {{- partial "comments.html" . -}}
+      		</div>
         {{ end }}
-      </span>
-    {{ end }}
-
-    {{ with .Params.Cover }}
-      <img src="/img/{{ . }}" class="post-cover" />
-    {{ end }}
-
-    <div class="post-content">
-      {{ .Content }}
-    </div>
-    {{ if or .NextInSection .PrevInSection }}
-      <div class="pagination">
-        <div class="pagination__title">
-          <span class="pagination__title-h">{{ .Site.Params.ReadOtherPosts }}</span>
-          <hr />
-        </div>
-        <div class="pagination__buttons">
-          {{ if .NextInSection }}
-            <span class="button previous">
-              <a href="{{ .NextInSection.Permalink }}">
-                <span class="button__icon">←</span>
-                <span class="button__text">{{ .NextInSection.Title }}</span>
-              </a>
-            </span>
-          {{ end }}
-          {{ if .PrevInSection }}
-            <span class="button next">
-              <a href="{{ .PrevInSection.Permalink }}">
-                <span class="button__text">{{ .PrevInSection.Title }}</span>
-                <span class="button__icon">→</span>
-              </a>
-            </span>
-          {{ end }}
-        </div>
-      </div>
-    {{ end }}
-
-    {{with .Params.LastModifierDisplayName}}
-    <div class="author">
-        <i class='fa fa-user'></i> <a href="mailto:{{ $.Params.LastModifierEmail }}">{{ . }}</a>
-    </div>
-    {{end}}
-
-    {{ if not .Page.Lastmod.IsZero }}
-    <div class="date">
-        <i class='fa fa-calendar'></i> {{T "last-update-on"}} {{ .Page.Lastmod.Format "02/01/2006" }}
-    </div>
-    {{end}}
-
-    {{ if .Site.Params.editURL }}
-    <div class="github-link">
-      <a href="{{ .Site.Params.editURL }}{{ replace .File.Dir "\\" "/" }}{{ .File.LogicalName }}" target="blank"><i class="fa fa-code-fork"></i>
-        {{T "Edit-this-page"}}</a>
-    </div>
-    {{end}}
-  </div>
+    </main>
 {{ end }}

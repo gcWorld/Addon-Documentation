@@ -1,9 +1,14 @@
 baseurl = "/"
-languageCode = "en-us"
+DefaultContentLanguage = "en"
 title = "Hello Friend"
 theme = "hello-friend-ng"
-copyright = "&copy; 2019 - www.gcmods.de"
+copyright = "www.gcmods.de"
 paginate = 5
+
+disableRSS      = true
+
+[author]
+  #name = "Jonas Elbers"
 
 [params]
   subtitle = "A simple theme for Hugo"
@@ -19,18 +24,42 @@ paginate = 5
 #   path = "/img/your-example-logo.svg"
 #   alt = "Your example logo alt text"
 
+  # Social icons
+  [[params.social]]
+    name = "twitter"
+    url  = "https://twitter.com/"
+
+  [[params.social]]
+    name = "email"
+    url  = "mailto:nobody@example.com"
+
+  [[params.social]]
+    name = "github"
+    url  = "https://github.com/"
+
+  [[params.social]]
+    name = "linkedin"
+    url  = "https://www.linkedin.com/"
+
+[languages]
+  [languages.en]
+    subtitle  = "Hello Friend"
+    weight    = 1
+    #copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+
+  [languages.de]
+    title  = "Deutsch"
+    weight    = 1
+    dateformNum     = "02.01.2006"
+    #copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+        
+
 [menu]
   [[menu.main]]
     identifier = "about"
     name = "About"
     url = "/about"
   [[menu.main]]
-    identifier = "showcase"
-    name = "Showcase"
-    url = "/showcase"
-
-[languages]
-  [languages.en]
-    writtenBy = "Written by"
-    readMore = "Read more"
-    readOtherPosts = "Read other posts"
+    identifier = "documentation"
+    name = "Documentation"
+    url = "/documentation"

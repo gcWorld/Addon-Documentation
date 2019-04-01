@@ -8,4 +8,4 @@ This page provides the documentation for all available LOTUS addons created by g
 
 ## Contribute
 
-If you find spelling mistakes, or feel like you can expand on certain topics, feel free to provide a pull-request via Github.
+If you find spelling mistakes, or feel like you can expand on certain topics, feel free to provide a pull-request via Github. Simply click on the "Improve this page" link at the bottom of each page.
