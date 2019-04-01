@@ -1,18 +1,18 @@
 [build]
-  publish = "Addon-Documentation/public"
-  command = "hugo"
+  publish = "public"
+  command = "hugo --gc --minify"
 
 [build.environment]
-  HUGO_VERSION = "0.51"
-  HUGO_THEME = "repo"
-  HUGO_THEMESDIR = "/opt/build"
+  HUGO_VERSION = "0.54"
+#  HUGO_THEME = "repo"
+#  HUGO_THEMESDIR = "/opt/build"
 
 # [context.production.environment]
-#   HUGO_VERSION = "0.51"
+#   HUGO_VERSION = "0.54"
 
 # [context.deploy-preview.environment]
-#   HUGO_VERSION = "0.51"
+#   HUGO_VERSION = "0.54"
 
 # [context.branch-deploy.environment]
-#   HUGO_VERSION = "0.51"
+#   HUGO_VERSION = "0.54"
   
