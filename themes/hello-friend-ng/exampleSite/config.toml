@@ -1,19 +1,17 @@
 baseurl = "/"
 languageCode = "en-us"
 title = "Hello Friend"
-theme = "hello-friend-ng"
-copyright = "&copy; 2019 - www.gcmods.de"
+theme = "hugo-theme-hello-friend"
+copyright = ""
 paginate = 5
 
 [params]
   subtitle = "A simple theme for Hugo"
   # "light" or "dark"
   defaultTheme = "dark"
-  editURL = "https://github.com/gcworld/Addon-Documentation/edit/master/content/"
-  LastModifierDisplayName = "seeadler"
 
 [params.logo]
-  logoText = "gcWorld Modifications - docs"
+  logoText = "hello friend"
 #   or
 #
 #   path = "/img/your-example-logo.svg"
