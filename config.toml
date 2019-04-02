@@ -1,6 +1,6 @@
 baseurl = "/"
 DefaultContentLanguage = "en"
-title = "Hello Friend"
+title = "gcMods Docs"
 theme = "hello-friend-ng"
 copyright = "www.gcmods.de"
 paginate = 5
