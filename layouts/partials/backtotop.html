@@ -1,0 +1,66 @@
+<!-- Styles your button (this is a black square with white text -->
+<style>
+    .back-to-top {
+        background-color: #000000;
+        color: #FFFFFF;
+        opacity: 0;
+        transition: opacity .6s ease-in-out;
+        z-index: 999;
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        width: 50px;
+        height: 50px;
+        box-sizing: border-box;
+        border-radius: 0%;
+        text-decoration: none;
+    }
+      
+      a.back-to-top {
+        font-weight: 1000;
+        letter-spacing: 2px;
+        font-size: 14px;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 1.6;
+        padding-left: 2px;
+        padding-top: 14px;
+    }
+      
+      .back-to-top.show {
+           opacity: 1;
+      }
+    </style>
+    <!-- Adds the back to top link to your website -->
+    <a href="#top" id="back-to-top" class="back-to-top" style="display: inline;">Top</a>
+    
+    <!-- Fades in the button when you scroll down -->
+    <script>
+      var link = document.getElementById("back-to-top");
+      var amountScrolled = 250;
+    
+    function addClass(el, className) {
+    
+        if (el.classList) {
+            el.classList.add(className);
+        } else {
+            el.className += ' ' + className;
+        }
+    
+    }
+    
+    function removeClass(el, className) {
+        if (el.classList)
+          el.classList.remove(className);
+        else
+          el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');    
+    }
+      
+    window.addEventListener('scroll', function(e) {
+         if ( window.scrollY > amountScrolled ) {
+             addClass(link, 'show');
+         } else {
+             removeClass(link, 'show');
+         }
+     });
+    </script>

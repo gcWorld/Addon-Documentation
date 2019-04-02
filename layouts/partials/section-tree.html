@@ -1,0 +1,24 @@
+<main class="posts">
+	{{ template "section-tree-nav" . }}
+</main>
+
+{{ define "section-tree-nav" }}
+{{ range where .Sections "Section" "documentation" }}
+
+<div class="posts-group">
+	<div class="post-year">LOTUS</div>
+
+	<ul class="posts-list">
+{{ range where .Sections "Params.game" "LOTUS" }}
+<li class="post-item">
+	<a href="{{.Permalink}}">
+		<span class="post-title">{{.LinkTitle}}</span>
+		<span class="post-day">{{ if .Site.Params.dateformShort }}{{ .Date.Format .Site.Params.dateformShort }}{{ else }}{{ .Date.Format "Jan 2"}}{{ end }}</span>
+	</a>
+</li>
+{{ end }}
+</ul>
+</div>
+
+{{ end }}
+{{ end }}

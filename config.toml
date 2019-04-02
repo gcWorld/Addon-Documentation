@@ -43,12 +43,12 @@ disableRSS      = true
 
 [languages]
   [languages.en]
-    subtitle  = "Hello Friend"
+    subtitle  = "Documentation"
     weight    = 1
     #copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
 
   [languages.de]
-    title  = "Deutsch"
+    title  = "Dokumentationen"
     weight    = 1
     dateformNum     = "02.01.2006"
     #copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
@@ -59,7 +59,3 @@ disableRSS      = true
     identifier = "about"
     name = "About"
     url = "/about"
-  [[menu.main]]
-    identifier = "documentation"
-    name = "Documentation"
-    url = "/documentation"
