@@ -11,14 +11,14 @@ disableRSS      = true
   #name = "Jonas Elbers"
 
 [params]
-  subtitle = "A simple theme for Hugo"
+  subtitle = "Addon Documentation"
   # "light" or "dark"
   defaultTheme = "dark"
   editURL = "https://github.com/gcworld/Addon-Documentation/edit/master/content/"
   LastModifierDisplayName = "seeadler"
 
 [params.logo]
-  logoText = "gcWorld Modifications - docs"
+  logoText = "gcMods Docs"
 #   or
 #
 #   path = "/img/your-example-logo.svg"
