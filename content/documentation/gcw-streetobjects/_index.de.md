@@ -1,4 +1,4 @@
 +++
-title = "gcW Streetobjects"
+title = "gcW Straßenobjekte"
 game = "LOTUS"
 +++

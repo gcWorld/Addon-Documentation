@@ -3,7 +3,7 @@ title = "Leitbake Leuchte"
 weight = 100
 +++
 
-Die Leuchte der Leitbake bietet im Map Editor 4 verschiede Modis.
+Die Leuchte der Leitbake bietet im Map Editor 4 verschiede Modis. Dies gilt für alle Varianten der Leuchte (beidseitig, einseitig, gelb, rot, ...).
 
 ```
 Blinkmodus:
