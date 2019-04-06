@@ -34,8 +34,8 @@ other = "Woops. Looks like this page doesn't exist."
 [Go-to-homepage]
 other = "Go to homepage"
 
-[Edit-this-page]
-other = "Verbessere diese Seite"
+[Edit-this-section]
+other = "Verbessere diesen Abschnitt"
 
 [Expand-title]
 other = "Expand me..."
