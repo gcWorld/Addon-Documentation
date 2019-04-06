@@ -21,7 +21,7 @@ Hier sind alle Änderungen der jeweiligen Versionen gelistet.
 - Sandhaufen
 
 #### Achtung Mapbauer
-- Die alten Leitbaken wurden durch ein neues Model ersetzt, dieses hat sich in Größe und _Attachment Points_ geändert. Es sind Anpassungen auf bestehenden Maps notwenig.
+- Die alten Leitbaken wurden durch ein neues Model ersetzt, dieses hat sich in Größe und _Attachment Points_ geändert. Es sind Anpassungen auf bestehenden Maps notwendig.
 - Die alten Leuchten werden in einem zukünftigen Update entfernt und sollten durch die neuen Modelle ersetzt werden. Die alten Modelle wurden in die Kategorie _Veraltet. Nicht verwenden_ verschoben.
 
 ---

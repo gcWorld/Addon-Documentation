@@ -1,9 +1,15 @@
 +++
-title = "Leitbake Leuchte"
+title = "Leitbake Leuchte (beidseitig/einseitig)"
 weight = 100
 +++
 
-Die Leuchte der Leitbake bietet im Map Editor 4 verschiede Modis. Dies gilt für alle Varianten der Leuchte (beidseitig, einseitig, gelb, rot, ...).
+Kategorie: Straßenmöbel
+
+
+Beidseitige oder einseitige gelbe Leuchte für Leitbaken.
+
+#### Anpassungmöglichkeiten
+Die Leuchte der Leitbake bietet im Karten-Editor vier verschiede Modis.
 
 ```
 Blinkmodus:
@@ -12,3 +18,5 @@ Blinkmodus:
 2: Blinken
 3: Blinken dimm
 ```
+
+(Die Änderung des Wertes auf 0 oder 1 hat aktuell keine sichtbaren Auswirkungen im Karten-Editor. Im Spiel passt das Verhalten dann aber.)

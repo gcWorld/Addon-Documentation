@@ -6,6 +6,7 @@ weight = 1
 Dieses Set bietet diverse Objekte zum Erstellen von Baustellen in LOTUS.
 
 Das Set enthält die folgenden Objekte:
+
 - Bagger
 - 2 Steinhaufen
 - Container

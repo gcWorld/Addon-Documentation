@@ -1,3 +1,4 @@
+removePathAccents=true
 baseurl = "/"
 DefaultContentLanguage = "en"
 title = "gcMods Docs"
