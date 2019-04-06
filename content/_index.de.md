@@ -3,4 +3,4 @@ title = "Dokumentation"
 description = ""
 +++
 
-Here you can find a list of available documentations, grouped by game.
+Hier findest du eine Liste aller Verfügbarer Dokumentationen, gruppiert nach Spiel.

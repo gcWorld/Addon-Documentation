@@ -1,6 +1,6 @@
 removePathAccents=true
 baseurl = "/"
-DefaultContentLanguage = "en"
+DefaultContentLanguage = "de"
 title = "gcMods Docs"
 theme = "hello-friend-ng"
 copyright = "www.gcmods.de"
