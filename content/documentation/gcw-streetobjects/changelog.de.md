@@ -7,6 +7,14 @@ Hier sind alle Änderungen der jeweiligen Versionen gelistet.
 
 ---
 
+### 1.3
+#### Änderungen
+- Neue Texturen für die Leitpfosten Gelb und Weiss
+
+### 1.2
+#### Neu
+- Neue verbesserte Leuchte für die Leitbake in Rot
+
 ### 1.1
 #### Änderungen
 - Bump Maps für den Container und die Steinhaufen
