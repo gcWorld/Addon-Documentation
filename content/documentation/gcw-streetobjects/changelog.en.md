@@ -7,6 +7,16 @@ Here you can find all changes.
 
 ---
 
+### 1.3
+#### Changes
+
+- New textures for delineator post (white, yellow)
+
+### 1.2
+### Newly Added
+
+- New and improved safety beacon lamp red.
+
 ### 1.1
 #### Changes
 
